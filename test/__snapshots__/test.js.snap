@@ -1,24 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`transforms for the browser environment 1`] = `
-"import \\"core-js/modules/es.symbol\\";
-import \\"core-js/modules/es.symbol.description\\";
-import \\"core-js/modules/es.array.filter\\";
-import \\"core-js/modules/es.array.for-each\\";
-import \\"core-js/modules/es.array.iterator\\";
-import \\"core-js/modules/es.map\\";
-import \\"core-js/modules/es.object.define-properties\\";
-import \\"core-js/modules/es.object.define-property\\";
-import \\"core-js/modules/es.object.get-own-property-descriptor\\";
-import \\"core-js/modules/es.object.get-own-property-descriptors\\";
-import \\"core-js/modules/es.object.keys\\";
-import \\"core-js/modules/es.object.to-string\\";
-import \\"core-js/modules/es.promise\\";
-import \\"core-js/modules/es.string.iterator\\";
-import \\"core-js/modules/web.dom-collections.for-each\\";
-import \\"core-js/modules/web.dom-collections.iterator\\";
-
-var _ref;
+"var _ref;
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -26,7 +9,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var http = import(\\"http\\");
+var x = import(\\"x\\");
+import \\"y\\";
 var element = React.createElement(\\"div\\", null, \\"Hello!\\");
 var jobOpeningOne = {
   title: \\"Developer\\"
@@ -34,13 +18,13 @@ var jobOpeningOne = {
 
 var jobOpeningTwo = _objectSpread({}, jobOpeningOne);
 
-var title = (_ref = jobOpeningTwo === null || jobOpeningTwo === void 0 ? void 0 : jobOpeningTwo.title) !== null && _ref !== void 0 ? _ref : \\"Default\\";
-var symbol = new Symbol();
-var map = new Map();"
+var description = (_ref = jobOpeningTwo === null || jobOpeningTwo === void 0 ? void 0 : jobOpeningTwo.description) !== null && _ref !== void 0 ? _ref : \\"Default\\";"
 `;
 
 exports[`transforms for the test environment 1`] = `
 "\\"use strict\\";
+
+require(\\"y\\");
 
 var _ref;
 
@@ -54,7 +38,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== \\"function\\") ret
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== \\"object\\" && typeof obj !== \\"function\\") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-const http = Promise.resolve().then(() => _interopRequireWildcard(require(\\"http\\")));
+const x = Promise.resolve().then(() => _interopRequireWildcard(require(\\"x\\")));
 const element = React.createElement(\\"div\\", null, \\"Hello!\\");
 const jobOpeningOne = {
   title: \\"Developer\\"
@@ -62,7 +46,5 @@ const jobOpeningOne = {
 
 const jobOpeningTwo = _objectSpread({}, jobOpeningOne);
 
-const title = (_ref = jobOpeningTwo === null || jobOpeningTwo === void 0 ? void 0 : jobOpeningTwo.title) !== null && _ref !== void 0 ? _ref : \\"Default\\";
-const symbol = new Symbol();
-const map = new Map();"
+const description = (_ref = jobOpeningTwo === null || jobOpeningTwo === void 0 ? void 0 : jobOpeningTwo.description) !== null && _ref !== void 0 ? _ref : \\"Default\\";"
 `;

@@ -9,9 +9,7 @@ module.exports = api => {
         "@babel/preset-env",
         {
           targets: test ? { node: "current" } : undefined,
-          modules: test ? "commonjs" : false,
-          useBuiltIns: "usage",
-          corejs: 3
+          modules: test ? "commonjs" : false
         }
       ]
     ],
