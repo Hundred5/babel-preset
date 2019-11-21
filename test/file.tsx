@@ -11,3 +11,7 @@ interface JobOpening {
 const jobOpeningOne: JobOpening = { title: "Developer" };
 const jobOpeningTwo = { ...jobOpeningOne };
 const description = jobOpeningTwo?.description ?? "Default";
+
+const fn = async () => {
+  return true;
+};
